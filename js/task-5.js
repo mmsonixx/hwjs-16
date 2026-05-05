@@ -40,17 +40,17 @@ class Car {
 
  
     decelerate(value) {
-        if (this.speed < 0) {
-            console.error('Не можливе значення')
-            return;
-        }
-        this.speed -= value;
+       this.speed -= value;
+       if (this.speed < 0) {
+         this.speed = 0;
+       }
+       
   }
 
  
     drive(hours) {
         if (this.isOn) {
-            this.distance = hours * this.speed;
+            this.distance += hours * this.speed;;
       }
   }
 }
